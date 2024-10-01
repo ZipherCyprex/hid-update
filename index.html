@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Zipher Device</title>
-    <meta name="description" content="Easily allow users to install Ble jammer." />
+    <meta name="description" content="Only Buyer can use this Update." />
+    <link rel="icon" type="image/png" href="res/ico-redc2.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
 
@@ -48,7 +49,8 @@
         }
 
         .content {
-            max-width: 800px;
+            font-family: iconic;
+            max-width: 870px;
             margin: 0 auto;
             padding: 20px;
             text-align: center;
@@ -57,6 +59,7 @@
         h1,
         h2,
         h3 {
+            font-family: iconic;
             font-weight: 600;
             margin: 0 0 20px;
         }
@@ -76,11 +79,13 @@
         }
 
         p {
+            font-family: iconic;
             font-size: 1.5rem;
             margin-bottom: 20px;
         }
 
         a {
+            font-family: iconic;
             color: #960cf8;
             text-decoration: none;
             font-weight: 500;
@@ -95,13 +100,16 @@
         }
 
         .button-row {
+            font-family: iconic;
             margin: 40px 0;
         }
 
         .footer {
+            width: px;
+            font-family: iconic;
             margin-top: 40px;
             border-top: 1px solid #66089c;
-            padding-top: 20px;
+            padding-top: 23px;
             font-size: 0.9rem;
         }
 
@@ -132,22 +140,39 @@
         }
 
         .option {
-            margin-top: -.2em;
+            display: ;
+            justify-content: center;
+            margin: 0 auto;
+            margin-top: 2em;
+            width: 160px;
+            background-color: #7906bb63;
+            /* border: 1.7px solid #960cf8; */
+            font-size: 24px;
+            align-items: center;
+            text-align: center;
+            padding: 0.1rem 0.1rem;
+            border-radius: 12px;
+            color: #a200ff;
+            
         }
 
         .vv {
-            border-bottom: 1px solid #66089c;
+            margin-top: 200px;
+            /* border-bottom: 1px solid #66089c; */
             padding: 13px 0;
         }
 
         .info1 {
             font-family: iconic;
-            
+            margin-left: 100px;
             border-radius: 15px;
             background-color: #1e0030;
+            
+            margin: 0px auto;
+            box-sizing: border-box;
             padding: 20px;
-            margin: 10px auto;
-
+            max-width: 97%;
+            width: auto;
         }
 
         .version {
@@ -175,7 +200,7 @@
         }
 
         .version > p {
-            
+            margin: auto;
         }
 
         .h-inf {
@@ -210,10 +235,11 @@
 <body>
     <div class="content">
         <h1>Zipher HID Update</h1>
+        <!-- <img src="res/ico-red-tran1.png" width="auto" height="50"> -->
         <p class="option">เลือกเฟิร์มแวร์</p>
-        <ul class="radios">
+        <ul class="radio">
             <li>
-                <label><input type="radio" name="type" value="zplast" /> Zipher-HID v2</label>
+                <label><input type="radio" name="type" value="zpv2" /> Zipher-HID v2</label>
             </li>
         </ul>
         <p class="button-row">
@@ -226,13 +252,15 @@
                 <h2> Zipher HID V2 <span class="btn-bt">Beta</span></h2>
                 
                 <p class="h-inf"> Funtion  </p>
-                <p class="funtion-inf">HID Injection: ใช้ได้กับทุกเครื่องที่รองรับคีย์บอร์ด <br>Key Support: Mobile key, Windows key, All Device <br> RunOnBoot: Boot Button For runpayload in Path ( AutoRun/HID.txt ) </p>
+                <p class="funtion-inf">
+                HID Injection: ใช้ได้กับทุกเครื่องที่รองรับคีย์บอร์ด 
+                <br>Key Support: Mobile key, Windows key, All Device <br> RunOnBoot: Boot Button For runpayload in Path ( AutoRun/HID.txt ) </p>
             </div>
             
             <div class="version">
-                <h2> Zipher HID V!</h2>
+                <h2> Zipher HID V1 <span class="btn-bt">Stable</span></h2>
                 <p class="h-inf"> Funtion </p>
-                <p class="funtion-inf">HID Injection <br>123</p>
+                <p class="funtion-inf">HID Injection <br>Scancode Default</p>
             </div>
             
 
@@ -248,7 +276,7 @@
             document.querySelectorAll('input[name="type"]').forEach(radio =>
                 radio.addEventListener("change", () => {
                     const button = document.querySelector('esp-web-install-button');
-                    button.manifest = `web/manifest_${radio.value}.json`;
+                    button.manifest = `load/manifest_${radio.value}.json`;
                     button.classList.remove('invisible');
                 })
             );

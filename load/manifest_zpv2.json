@@ -1,0 +1,32 @@
+{
+    "name": "Zipher HID v2",
+    "builds": [
+        {
+            "chipFamily": "ESP32-S2",
+            "improv": false,
+            "parts": [
+                {
+                    "path": "zpv2l1.bootloader.bin",
+                    "offset": 4096
+                },
+                {
+                    "path": "zpv2l1.partitions.bin",
+                    "offset": 32768
+                },
+                {
+                    "path": "zpv2l1.bin",
+                    "offset": 65536
+                }
+            ]
+        },
+        {
+            "chipFamily": "ESP32",
+            "parts": [
+                {
+                    "path": "esp32.bin",
+                    "offset": 0
+                }
+            ]
+        }
+    ]
+}
