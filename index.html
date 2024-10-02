@@ -44,11 +44,11 @@
             margin: 0;
             line-height: 1.6;
             font-size: 16px;
-            background-color: #fefcff;
-            color: #000;
+            color: #fefcff;
         }
 
         .content {
+            z-index: 1;
             font-family: iconic;
             max-width: 870px;
             margin: 0 auto;
@@ -68,8 +68,10 @@
             font-size: 4.6rem;
             font-family: iconic;
             line-height: 1;
+            
         }
 
+        
         h2 {
             font-size: 2rem;
         }
@@ -107,7 +109,7 @@
         .footer {
             width: px;
             font-family: iconic;
-            margin-top: 40px;
+            margin-top: 15px;
             border-top: 1px solid #66089c;
             padding-top: 23px;
             font-size: 0.9rem;
@@ -140,6 +142,8 @@
         }
 
         .option {
+            
+            font-family: iconic;
             justify-content: center;
             margin: 0 auto;
             margin-top: 2em;
@@ -152,8 +156,42 @@
             padding: 0.1rem 0.1rem;
             border-radius: 12px;
             color: #a200ff;
+            border: none;
+        }
+
+        .mus-btn {
+            
+            cursor: pointer;
+            
+            width: auto;
+            font-weight: bold;
+            font-family: iconic;
+            justify-content: center;
+            margin: 0 auto;
+            margin-top: 20px;
+            width: 90px;
+            background-color: #7906bb63;
+            /* border: 1.7px solid #960cf8; */
+            font-size: 24px;
+            align-items: center;
+            text-align: center;
+            padding: 0.1rem 0.1rem;
+            border-radius: 12px;
+            color: #a200ff;
+            border: none;
+            transition: transform 0.3s ease;
             
         }
+
+        .hidden {
+        opacity: 0; /* ทำให้ปุ่มโปร่งใส */
+        transform: translateY(-20px); /* ย้ายปุ่มขึ้นเล็กน้อย */
+        }
+
+        .mus-btn:hover {
+        transform: translateY(4px); /* ปรับตำแหน่งเมื่อกด */
+        }
+
 
         .vv {
             margin-top: 160px;
@@ -215,6 +253,38 @@
             color: #836a91;
         }
 
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* ซ่อนส่วนที่เกินออกมานอกหน้าจอ */
+            z-index: -2; /* วิดีโออยู่ด้านหลังเนื้อหา */
+}
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover; /* ทำให้วิดีโอเต็มจอโดยไม่เสียอัตราส่วน */
+
+}
+
+.blur-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #100418e8;
+    backdrop-filter: blur(80px); /* ฟิลเตอร์เบลอ */
+    z-index: -1; /* เลเยอร์เบลออยู่ด้านหน้าวิดีโอ */
+}
 
 
 
@@ -299,8 +369,22 @@
 
 <body>
     <div class="content">
-        <h1>Zipher HID Update</h1>
+
+        <div class="video-background">
+            <video id="bg-vdo" autoplay loop playsinline muted >
+                <source src="res/vd2.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="blur-layer"></div>
+                
+
+        <h1>Zipher HID Update 
+            
+        </h1>
         <!-- <img src="res/ico-red-tran1.png" width="auto" height="50"> -->
+        
+
         <p class="option">เลือกเฟิร์มแวร์</p>
         <ul class="radio">
             <li>
@@ -310,8 +394,13 @@
         <p class="button-row">
             <esp-web-install-button class="invisible"></esp-web-install-button>
         </p>
+        
+        
+        
         <h2 class="vv">รายละเอียด</h2>
         <div class="info1">
+
+            
 
             <div class="version">
                 <h2> Zipher HID V2 <span class="btn-bt">Beta</span></h2>
@@ -323,6 +412,7 @@
             </div>
             
             <div class="version">
+                
                 <h2> Zipher HID V1 <span class="btn-bt">Stable</span></h2>
                 <p class="h-inf"> Funtion </p>
                 <p class="funtion-inf">HID Injection <br>Scancode Default</p>
@@ -330,6 +420,8 @@
             
 
         </div>
+
+        <button class="mus-btn" id="playButton">Music !!</button>
 
         <div class="footer">
             ✨ Discord <a href="https://discord.gg/x9HGCbFEeq">Zipher-Community</a>
@@ -345,6 +437,45 @@
                     button.classList.remove('invisible');
                 })
             );
+
+
+
+            document.getElementById('playButton').addEventListener('click', function () {
+                    const video = document.getElementById('bg-vdo');
+                    video.play();
+                    video.muted = false; // เปิดเสียง
+                    this.style.display = 'none'; // ซ่อนปุ่ม
+                });
+
+            const video = document.getElementById('bg-vdo');
+                let isReversing = false;
+
+                function reverseVideo() {
+                    if (!isReversing) {
+                        isReversing = true;
+                        const reverseFrame = () => {
+                            if (video.currentTime > 0) {
+                                video.currentTime -= 0.1; // ลดทีละ 0.1 วินาที
+                                requestAnimationFrame(reverseFrame);
+                            } else {
+                                isReversing = false;
+                                video.play(); // เล่นวิดีโอใหม่หลังจากย้อนถึงจุดเริ่มต้น
+                            }
+                        };
+                        reverseFrame();
+                    }
+                }
+
+                // เมื่อวิดีโอเล่นถึงจุดสิ้นสุด ให้ย้อนกลับ
+                video.addEventListener('ended', function () {
+                    video.pause();
+                    reverseVideo();
+                });
+
+                // เริ่มเล่นวิดีโอ
+                video.play();
+
+
         </script>
     </div>
 </body>
