@@ -3,11 +3,12 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Zipher Device</title>
+    <title>Zipher Web"</title>
     <meta name="description" content="Only Buyer can use this Update." />
     <link rel="icon" type="image/png" href="res/ico-redc2.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
+    
 
     <style>
         @font-face {
@@ -39,6 +40,7 @@
         }
 
         body {
+            cursor: url('res/cursor40pxV.png'), auto;
             font-family: -apple-system, system-ui, BlinkMacSystemFont, "iconic", Roboto, Ubuntu, sans-serif;
             padding: 0;
             margin: 0;
@@ -48,6 +50,7 @@
         }
 
         .content {
+            cursor: url('res/cursor40pxV.png'), auto;
             z-index: 1;
             font-family: iconic;
             max-width: 870px;
@@ -138,7 +141,6 @@
             cursor: pointer;
             padding: 10px 20px;
             display: block;
-            
         }
 
         .option {
@@ -147,10 +149,10 @@
             justify-content: center;
             margin: 0 auto;
             margin-top: 2em;
-            width: 160px;
+            width: 140px;
             background-color: #7906bb63;
             /* border: 1.7px solid #960cf8; */
-            font-size: 24px;
+            font-size: 18px;
             align-items: center;
             text-align: center;
             padding: 0.1rem 0.1rem;
@@ -203,8 +205,9 @@
             font-family: iconic;
             margin-left: 100px;
             border-radius: 15px;
-            background-color: #1e0030;
-            
+            background-color: #1d002eb6;
+            /* background-color: #1e0030; */
+            /* border: 2px solid #7700ff17;  */
             margin: 0px auto;
             box-sizing: border-box;
             padding: 20px;
@@ -216,19 +219,19 @@
             line-height: 10px;
             font-size: 2px;
             text-align: left;
-            margin-bottom: 20px;
+            margin-bottom: px;
             padding: 15px 10px;
             border-left: 5px solid #32006b; 
         }
 
         .version > h2 { 
             font-weight: bold;
-            font-size: 40px;
+            font-size: 30px;
         }
 
         .btn-bt { 
             background-color: #7906bb63;
-            font-size: 24px;
+            font-size: 17px;
             align-items: center;
             text-align: center;
             padding: 0.1rem 0.5rem;
@@ -237,17 +240,17 @@
         }
 
         .version > p {
-            margin: auto;
+            /* margin: auto; */
         }
 
         .h-inf {
-            font-size: 26px;
+            font-size: 20px;
             font-weight: bold;
         }
 
         .funtion-inf {
-            font-size: 22px;
-            margin-top: -10px;
+            font-size: 18px;
+            margin-top: -12px;
             font-family: iconic;
             line-height: .9;
             color: #836a91;
@@ -281,7 +284,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #100418e8;
+    background-color: #100418dc;
     backdrop-filter: blur(80px); /* ฟิลเตอร์เบลอ */
     z-index: -1; /* เลเยอร์เบลออยู่ด้านหน้าวิดีโอ */
 }
@@ -293,7 +296,7 @@
             line-height: 10px;
             font-size: 2px;
             text-align: left;
-            margin-bottom: 20px;
+            /* margin-bottom: 20px; */
             padding: 15px 10px;
             border-left: 5px solid #32006b; 
         }
@@ -334,7 +337,7 @@
         }
 
         .version > p {
-            margin: auto;
+            /* margin: auto; */
         }
 
         .h-inf {
@@ -372,14 +375,14 @@
 
         <div class="video-background">
             <video id="bg-vdo" autoplay loop playsinline muted >
-                <source src="res/vd2.mp4" type="video/mp4">
+                <source src="res/vd3.mp4" type="video/mp4">
             </video>
         </div>
         
         <div class="blur-layer"></div>
                 
 
-        <h1>Zipher HID Update 
+        <h1>Zipher HID Updater 
             
         </h1>
         <!-- <img src="res/ico-red-tran1.png" width="auto" height="50"> -->
@@ -408,14 +411,14 @@
                 <p class="h-inf"> Funtion  </p>
                 <p class="funtion-inf">
                 HID Injection: ใช้ได้กับทุกเครื่องที่รองรับคีย์บอร์ด 
-                <br>Key Support: Mobile key, Windows key, All Device <br> RunOnBoot: Boot Button For runpayload in Path ( AutoRun/HID.txt ) </p>
+                <br>Key Support: Phone key, Windows key, All Device <br> RunOnBoot: Boot Button For runpayload in Path ( AutoRun/HID.txt ) </p>
             </div>
             
             <div class="version">
                 
                 <h2> Zipher HID V1 <span class="btn-bt">Stable</span></h2>
                 <p class="h-inf"> Funtion </p>
-                <p class="funtion-inf">HID Injection <br>Scancode Default</p>
+                <p class="funtion-inf">HID Injection: ใช้ได้กับทุกเครื่องที่รองรับคีย์บอร์ด <br>Key Support: คำสั่งพื้นฐาน และ ยังไม่ได้เพื่มของ Mobile/Phone</p>
             </div>
             
 
