@@ -4,6 +4,7 @@
         {
             "chipFamily": "ESP32-S2",
             "improv": false,
+            "noreset": true,
             "parts": [
                 {
                     "path": "zpv1233.bin",
