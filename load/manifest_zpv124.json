@@ -1,5 +1,5 @@
 {
-    "name": "Zipher HID v1.2",
+    "name": "Zipher HID v1.24",
     "builds": [
         {
             "chipFamily": "ESP32-S2",
