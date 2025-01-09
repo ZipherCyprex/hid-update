@@ -1,0 +1,25 @@
+{
+    "name": "Zipher HID v1.2",
+    "builds": [
+        {
+            "chipFamily": "ESP32-S2",
+            "improv": false,
+            "noreset": true,
+            "parts": [
+                {
+                    "path": "zipher_124mg.bin",
+                    "offset": 0
+                }
+            ]
+        },
+        {
+            "chipFamily": "ESP32",
+            "parts": [
+                {
+                    "path": "esp32.bin",
+                    "offset": 0
+                }
+            ]
+        }
+    ]
+}
